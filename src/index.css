@@ -12,12 +12,19 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans;
+    @apply bg-slate-50 text-slate-900 font-sans transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
   }
 }
 
 .markdown-body {
   @apply text-sm leading-relaxed;
+}
+
+.dark .markdown-body {
+  @apply text-slate-200;
 }
 
 .markdown-body h1 { @apply text-xl font-bold mb-4 mt-6; }
@@ -28,5 +35,8 @@
 .markdown-body ol { @apply list-decimal pl-5 mb-4; }
 .markdown-body li { @apply mb-1; }
 .markdown-body code { @apply bg-slate-100 px-1 rounded font-mono text-xs; }
+.dark .markdown-body code { @apply bg-slate-800 text-slate-300; }
 .markdown-body pre { @apply bg-slate-900 text-slate-50 p-4 rounded-lg overflow-x-auto mb-4 font-mono text-xs; }
+.dark .markdown-body pre { @apply bg-black border border-slate-800; }
 .markdown-body blockquote { @apply border-l-4 border-slate-300 pl-4 italic mb-4; }
+.dark .markdown-body blockquote { @apply border-slate-700 text-slate-400; }
